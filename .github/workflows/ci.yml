@@ -27,8 +27,6 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
-        # Si npm workspaces te pose problème, remplace par:
-        # run: npm ci --workspaces=false
 
       - name: Smoke check (start file exists)
         run: node -c src/server.js || true
@@ -80,7 +78,7 @@ jobs:
       - name: Flutter analyze
         run: flutter analyze
 
-          turbo:
+  turbo:
     name: Turbo (monorepo) - build
     runs-on: ubuntu-latest
     steps:
